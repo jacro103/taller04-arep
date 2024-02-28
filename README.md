@@ -132,13 +132,8 @@ docker tag dockersparkprimer jacro103/lab04taller
 Ahora nos autenticamos en nuestra cuenta de docker y subimos la imagen al repositorio:
 
 ```
-docker push juanpablodaza/arep-taller-5:latest
+docker push jacro103/lab04taller:latest
 ```
-
-
-
-Y ahora viendo el repositorio podemos ver la imagen:<br>
-
 
 
 El repositorio donde esta subida es:
