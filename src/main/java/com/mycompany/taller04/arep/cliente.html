@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente para Servicios REST</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Cliente para Servicios REST</h1>
+    <div>
+        <label for="num">Número:</label>
+        <input type="text" id="num">
+        <button onclick="calcularCoseno()">Calcular Coseno</button>
+        <p id="resultadoCoseno"></p>
+    </div>
+    <div>
+        <label for="num">Número:</label>
+        <input type="text" id="num">
+        <button onclick="calcularSeno()">Calcular Seno</button>
+        <p id="resultadoSeno"></p>
+    </div>
+    <div>
+        <label for="palabra">Palabra:</label>
+        <input type="text" id="palabra">
+        <button onclick="esPalindromo()">Es Palíndromo</button>
+        <p id="resultadoPalindromo"></p>
+    </div>
+    <div>
+        <label for="numA">Número A:</label>
+        <input type="text" id="numA">
+        <label for="numB">Número B:</label>
+        <input type="text" id="numB">
+        <button onclick="calcularMagnitud()">Calcular Magnitud</button>
+        <p id="resultadoMagnitud"></p>
+    </div>
+
+    <script>
+        function calcularCoseno() {
+            var num = $('#num').val();
+            $.get('/cos/' + num, function(data) {
+                $('#resultadoCoseno').text('El coseno de ' + num + ' es ' + data);
+            });
+        }
+
+        function calcularSeno() {
+            var num = $('#num').val();
+            $.get('/sin/' + num, function(data) {
+                $('#resultadoSeno').text('El seno de ' + num + ' es ' + data);
+            });
+        }
+
+        function esPalindromo() {
+            var palabra = $('#palabra').val();
+            $.get('/palindrome/' + palabra, function(data) {
+                $('#resultadoPalindromo').text('La palabra ' + palabra + ' ' + (data ? 'es' : 'no es') + ' palíndromo');
+            });
+        }
+
+        function calcularMagnitud() {
+            var numA = $('#numA').val();
+            var numB = $('#numB').val();
+            $.get('/vec/' + numA + '/' + numB, function(data) {
+                $('#resultadoMagnitud').text('La magnitud del vector (' + numA + ', ' + numB + ') es ' + data);
+            });
+        }
+    </script>
+</body>
+</html>
+
