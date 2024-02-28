@@ -1,5 +1,6 @@
 # AREP-Taller-5
 Jose Alejandro Correa Rodriguez
+##  Introduccion
 En este taller se tuvo como objetivo realizar un servidor web utilizando Spark y que respondiera a ciertas peticiones y tambien se subiera la imagen del contenedor a Docker
 
 ## Para ejecutar el programa
@@ -157,7 +158,5 @@ Para correr la imagen podemos hacer el siguiente proceso:
 * [Maven](https://maven.apache.org/) - Manejo de dependecias.
 
 * [Docker](https://www.docker.com) - Creacion de imagenes.
-
-## Autor
 
 
